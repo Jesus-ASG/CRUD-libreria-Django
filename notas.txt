@@ -1,0 +1,127 @@
+# basado del tutorial de https://www.youtube.com/watch?v=ezIj71CX944
+
+###
+Librerías
+instalar django como sea (version específica o como indica la web)
+$ python -m pip install Django
+pymysql
+pillow
+
+### 
+iniciar django
+Abrir terminal en carpeta donde crear el proyecto y escribir
+$ django-admin startproject nombre_del_proyecto
+
+SALIDA:
+Una carpeta llamada nombre_del_proyecto
+y dentro otra carpeta con el mismo nombre y un archivo llamado manage.py
+
+###
+
+iniciar servidor
+ir a carpeta principal nombre_del_proyecto 
+$ python manage.py runserver
+
+###
+iniciar librerías - iniciar aplicación
+$ python manage.py startapp libreria
+
+SALIDA:
+Una carpeta llamada libreria con diversos archivos
+
+Hay que agregar esta carpeta al archivo settings.py dentro de la carpeta del proyecto
+en el apartado "INSTALLED_APPS"
+INSTALLED_APPS = [
+    ...
+    'libreria'
+]
+
+###
+
+Agregar vistas
+en el archivo views.py dentro de libreria importar
+from django.http import HttpResponse
+
+para devolver un elemento html
+return HttpResponse("contenido html")
+
+para devolver una página html
+return render(request, 'archivo.html_dentro_de_carpeta_templates')
+
+
+###
+Estructura de urls
+
+path('valor1', views.valor2, name='valor3'),
+
+valor1: es la url a la cual se va a acceder
+valor2: es el nombre de la función que se definió en views.py
+valor3: metadato opcional, sirve para crear enlaces
+
+###
+enlace a una página
+en el href poner ="{% url 'metadato en path de url' %}"
+
+###
+Implementar base de datos
+agregar los parámetros en el archivo settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'libreria',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306'
+    }
+}
+
+y en el archivo __init__.py del sistema implementar
+import pymysql
+pymysql.install_as_MySQLdb()
+
+esa librería se puede instalar con 
+$python3 -m pip install pymysql
+
+###
+Hace migraciones, es para pasar estructuras a base de datos
+--- Es necesario haber implementado base de datos
+--- es necesario tener la librería pillow $python3 -m pip install pillow
+
+$python3 manage.py makemigrations
+$python3 manage.py migrate
+
+
+###
+Crear usuario administrador
+
+en admin.py importar modelos
+from .models import Libro
+
+registrarlo
+admin.site.register(Libro)
+
+luego en terminal
+$python manage.py createsuperuser
+y rellenar con los datos que pide
+-- jesus -- jesus.serrano@gmail.com -- 123
+
+SALIDA: al ejecutar $... runserver activa una opción en la que si vas a /admin
+te mete a un modo administrador, ahí se ponen los datos para entrar
+
+###
+Para poner imágenes
+
+Agregar en el código de settings.py
+import os
+
+MEDIA_ROOT = os.path.join(BASE_DIR, '')
+MEDIA_URL = '/imagenes/'
+
+Agregar en el código de urls.py
+from django.conf import settings
+from django.contrib.staticfiles.urls import static
+
+urlpatterns = [
+    ...
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
