@@ -29,3 +29,7 @@ Sistema administrador de una librería usando python 3.10 y Django 4.0.4
 
 ### Eliminar libro
 ![image](https://user-images.githubusercontent.com/106128245/184287370-df4a1621-b4ed-4fa2-8fe7-7b244fa31f3b.png)
+
+## Menú "Nosotros"
+![image](https://user-images.githubusercontent.com/106128245/184508756-ddff145d-c22e-4f01-8c1c-c5d035068dd8.png)
+
