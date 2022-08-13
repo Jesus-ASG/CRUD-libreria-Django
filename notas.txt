@@ -125,3 +125,18 @@ from django.contrib.staticfiles.urls import static
 urlpatterns = [
     ...
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+###
+
+Cargar estilos
+Crear una carpeta llamada 'static' dentro del proyecto principal
+agregar en settings.py
+
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+En donde se quieran cargar archivos poner
+{% load static %}
+<link rel="stylesheet" href="{% static 'direccion_de_archivo.css' %}" type="text/css">
+
+###
