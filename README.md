@@ -7,7 +7,7 @@ Sistema administrador de una librería usando python 3.10 y Django 4.0.4
 
 ## Instalación
 * Copiar el archivo libreria.sql a un servidor de base de datos
-* En windows abrir una terminal y escribir "python", si redirige a la tienda instalarlo, de lo contrario simplemente salir con exit()
+* En windows abrir una terminal y escribir "python", si redirige a la tienda instalarlo, de lo contrario simplemente salir con exit(). En Linux escribir sudo apt-get install python3.10 y el pip con sudo apt install python3-pip
 * Abrir una terminal y escribir python3 -m pip install django
 * Abrir una terminal y escribir python3 -m pip install pymysql
 * Abrir una terminal y escribir python3 -m pip install pillow
