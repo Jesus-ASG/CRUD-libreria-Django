@@ -1,0 +1,29 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+.center{
+    text-align: center;
+}
+.center p{
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.info{
+    padding: 20px;
+    border: 1px solid #7AFFFF;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    text-align: auto;
+    display: flex;
+}
+
+.info ul{
+    padding-right: 20px;
+}
+
+.info a{
+    text-decoration: none;
+}

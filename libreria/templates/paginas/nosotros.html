@@ -1,10 +1,47 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block titulo %} Nosotros {% endblock %}
 
 {% block contenido %}
 
-<div class="hola"> div para intentar cargar estilos</div>
+
+<div class="col-12">
+    <div class="center">
+        <h2>Perfil</h2>
+        <hr>
+        <p>Jesús Alejandro Serrano Graciano - Desarrollador</p>
+    </div>
+        
+    <div class="info">
+        <div class="col-8 apila-horizontal">
+            <ul>
+                <li>
+                Me gusta programar cosas que ayuden a la gente a llevar una vida más cómoda y sencilla.<br><br>
+                </li>
+                <li>
+                Disfruto aprender nuevas tecnologías y hacer proyectos por mi cuenta, tengo conocimientos de desarrollo web con html, css, javascript, php, Django, Node.js con Express y Spring.<br><br>
+                </li>
+                <li>
+                Actualmente curso el noveno semestre de Ingeniería en Ciencias de la Computación en la <a href="https://www.buap.mx/" target="_blank">Benemérita Universidad Autónoma de Puebla.<i class="fas fa-external-link-alt"></i></a>
+                </li>
+            </ul>
+            <div class="center">
+                Enlaces:<br>
+                <a class="btn btn-outline-dark m-1" href="https://github.com/Jesus-ASG" target="_blank" role="button"><i class="fa fa-github fa-2x"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-4 apila-horizontal">
+            <img src="{% static 'img/dev-icon.png' %}" alt="dev-icon.png" width="100%">
+        </div>
+        
+    </div>
+    <br>
+    
+    
+</div>
+
 
 
 {% endblock %}
